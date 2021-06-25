@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="item.html">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <ul>
+
+            <li class="firstNavItem">
+                <div class="icon-size slider">
+                    <i class="fas fa-bars grey"></i>
+                </div>
+                <p class="slider-title">Dashboard</p>
+            </li>
+
+
+            <li>
+                <div class="search-main">
+                    <input class="search" type="text" placeholder="Search">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </li>
+
+
+            <li style="float:right">
+                <div class="profileInfo">
+                    <p class="profileName">Joe Quayson</p>
+                    <p class="profileRole">Super admin</p>
+                </div>
+            </li>
+            <li style="float:right">
+                <div class="profile">
+                    <i class="fas fa-user center-icon"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidenav" title="Home">
+
+        <div class="icon-size slider side-main" title="Application">
+            <i class="fas fa-boxes side-icon"></i>
+            <p class="side-title">Inventory App</p>
+        </div>
+
+        <div class="icon-size side-sub">
+            <i class="fas fa-home side-icon"></i>
+            <p class="side-title">Home</p>
+        </div>
+        <!-- <br>
+        <br>
+
+        <div class="icon-size side-sub" title="Users">
+            <i class="fas fa-users side-icon"></i>
+            <p class="side-title">Users</p>
+        </div>
+        <br>
+        <br>
+
+        <div class="icon-size side-sub" title="Items">
+            <i class="fas fa-book side-icon"></i>
+            <p class="side-title">Items Overview</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="icon-size side-sub" title="Assignments">
+            <i class="fas fa-book side-icon"></i>
+            <p class="side-title">Add to Item</p>
+        </div>
+        <br>
+        <br>
+        <div class="icon-size side-sub" title="Assignments">
+            <i class="fas fa-book side-icon"></i>
+            <p class="side-title">Remove Item</p>
+        </div> -->
+
+
+
+
+
+
+    </div>
+
+    <div class="main">
+        <div class="submain-1">
+            <div class="card">
+                <div class="customers">
+                    <h1 id="numberOfItems">0</h1>
+                    <h4>Number of Items</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="customers">
+                    <h1 id="totalStock">0</h1>
+                    <h4>Total Stock</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="customers">
+
+                    <h1>4</h1>
+                    <h4>Number of Categories</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="customers">
+
+                    <h1>$5k</h1>
+                    <h4>Income</h4>
+                </div>
+            </div>
+        </div>
+        <div class="submain-2">
+            <div class="card2">
+                <button class="btn-addItem" onclick="addItemPopUp()">Add Item</button>
+                <table id="tableMain" style="width:100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="card2"></div>
+        </div>
+    </div>
+
+
+    <div id="addItemMain" class="add-item">
+        <div class="Add-I">
+            <h1>Add Item</h1>
+        </div>
+        <div class="Add-content">
+            <div>
+                <input type="text" id="itemName" placeholder="Name" class="item">
+            </div>
+            <div>
+                <input type="text" id="itemDescription"  placeholder="Description" class="item1"></div>
+            <div>
+                <select name="cars" class="categorySelect" id="categorySelect">
+                    <option value="" selected>Select Category</option>
+                    <option value="Watch">Watch</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Phones">Phones</option>
+                    <option value="Tablets">Tablets</option>
+                </select>
+            </div>
+            <div><input type="number" id="itemStock" name="" min="1" class="item3" placeholder="Quantity"></div>
+        </div>
+
+        <div class="Add-buttons">
+            <div class="button"> 
+                <button id="Add" onclick="save()">Add</button> 
+                <button id="Cancel" onclick="removeAddItemPopUp()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="updateItemMain" class="add-item">
+        <div class="Add-I">
+            <h1>Update Item</h1>
+        </div>
+        <div class="Add-content">
+            <div>
+                <input type="text" id="updateItemName" placeholder="Name" class="item">
+            </div>
+            <div>
+                <input type="text" id="updateItemDescription"  placeholder="Description" class="item1"></div>
+            <div>
+                <select name="cars" class="categorySelect" id="updateCategorySelect">
+                    <option value="" selected>Select Category</option>
+                    <option value="Watch">Watch</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Phones">Phones</option>
+                    <option value="Tablets">Tablets</option>
+                </select>
+            </div>
+            <div><input type="number" id="updateItemStock" name="" min="1" class="item3" placeholder="Quantity"></div>
+        </div>
+
+        <div class="Add-buttons">
+            <div class="button"> 
+                <button id="Add" onclick="update()">Update</button> 
+                <button id="Cancel" onclick="removeUpdateItemPopUp()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/60097da7b7.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
